@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/att/test/Example.gd" type="Script" id=1]
+
+[node name="Example" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Output" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_bottom = 180.0
+scroll_following = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -139.0
+margin_top = -103.5
+margin_right = 139.0
+margin_bottom = 103.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequestTrackingAuthorization" type="Button" parent="VBoxContainer"]
+margin_right = 278.0
+margin_bottom = 101.0
+size_flags_vertical = 3
+text = "Request Tracking Authorization"
+
+[node name="GetTrackingAuthorizationStatus" type="Button" parent="VBoxContainer"]
+margin_top = 105.0
+margin_right = 278.0
+margin_bottom = 207.0
+size_flags_vertical = 3
+text = "Get Tracking Authorization Status"
+
+[connection signal="pressed" from="VBoxContainer/RequestTrackingAuthorization" to="." method="_on_RequestTrackingAuthorization_pressed"]
+[connection signal="pressed" from="VBoxContainer/GetTrackingAuthorizationStatus" to="." method="_on_GetTrackingAuthorizationStatus_pressed"]
